@@ -231,8 +231,8 @@ List, Set, Map, Stack, Queue는 자바 컬렉션 프레임워크의 다양한 �
    ```
    - java.util.Collection: 모든 컬렉션의 상위 인터페이스
    - java.util.List: 순서가 있는 컬렉션, 중복을 허용함
-   - java.util.ArrayList: 배열 기반으로 동작하는 List의 구현체
-   - java.util.LinkedList: 연결 리스트 기반의 List 구현체
+   - java.util.ArrayList: 배열 기반으로 동작하는 List의 구현체  
+   - java.util.LinkedList: 연결 리스트 기반의 List 구현체✔️
    - java.util.Vector: 동기화된 List 구현체 (덜 사용됨)
    - java.util.Stack: LIFO 방식의 스택 구현체 (Vector의 서브클래스)
 - Queue 상속 계층도
@@ -247,7 +247,7 @@ List, Set, Map, Stack, Queue는 자바 컬렉션 프레임워크의 다양한 �
    ```
    - java.util.Collection: 모든 컬렉션의 상위 인터페이스
    - java.util.Queue: FIFO 방식으로 동작하는 컬렉션 인터페이스
-   - java.util.LinkedList: 양방향 연결 리스트 기반의 Queue 구현체
+   - java.util.LinkedList: 양방향 연결 리스트 기반의 Queue 구현체✔️
    - java.util.PriorityQueue: 요소의 우선순위에 따라 처리되는 Queue 구현체
    - java.util.Deque: 양방향 큐 인터페이스 (FIFO 및 LIFO 모두 가능)
    - java.util.ArrayDeque: 배열 기반의 양방향 큐 구현체                
