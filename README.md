@@ -325,9 +325,38 @@ IllegalStateException이 발생하면 해당 예외가 처리되지 않는 한 �
    ```
 
 ---
-**Iterator, ListIterator**
+✏️ **예제 11-5 Iterator**  
 컬렉션 프레임웍에서는 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화하였다.  
-컬렉션에 저장된 각 요소에 접근하는 기능을 가진 Iterator 인터페이스를 정의하고, Collection 인터페이스에는 'Iterator를 구현한 클래스의 인스턴스'를 반환하는 iterator()를 정의하고 있다.
+List클래스들은 저장순서를 유지하기 때문에 Iterator를 이용해서 읽어 온 결과 역시 저장순서와 동일하지만 Set클래스들은 각 요소간의 순서가 유지 되지 않기때문에 Iteraotr를 이용해서 저장된 요소들을 읽어 와도 처음에 저장된 순서와 같지 않다.  
+
+* Iterator: 컬렉션에 저장된 요소를 접근하는데 사용되는 인터페이스
+* ListIterator: Iterator에 양방향 조회기능추가(List를 구현한 경우만 사용가능)
+  
+```java
+public class Ex11_5 {
+    public static void main(String[] args) {
+        ArrayList list=new ArrayList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+
+//        Iterator it=list.iterator();
+//
+//        while (it.hasNext()){
+//            Object obj=it.next();
+//            System.out.println(obj);
+//        }
+
+        for (int i=0;i<list.size();i++){
+            Object obj=list.get(i);
+            System.out.println(obj);
+        }
+    }
+}
+
+```
     
 
 
