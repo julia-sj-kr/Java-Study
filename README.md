@@ -431,6 +431,58 @@ java.lang.Object
 - java.util.Arrays: 배열을 다루기 위한 여러 정적 메서드를 제공하는 유틸리티 클래스입니다. 이 클래스는 final로 선언되어 다른 클래스가 이 클래스를 상속할 수 없습니다.
 
 ---
+**Integer 클래스**  
+자바에서 기본 데이터 타입인 int를 객체로 다룰 수 있도록 해주는 Wrapper 클래스입니다.  
+자바는 객체 지향 언어이기 때문에 원시 타입(primitive type)인 int와 같은 기본 데이터 타입을 객체로 사용할 필요가 있을 때 Integer 클래스를 사용합니다.  
+##### 특징  
+- 박싱과 언박싱:
+  - 박싱 (Boxing): 기본형 int를 Integer 객체로 변환하는 과정입니다.
+  - 언박싱 (Unboxing): Integer 객체를 기본형 int로 변환하는 과정입니다.
+    ```
+    Integer intObj = 5;  // 박싱
+    int num = intObj;    // 언박싱
+    ```
+- 문자열 변환: Integer 클래스는 문자열을 정수로 변환하는 parseInt() 메서드와 정수를 문자열로 변환하는 toString() 메서드를 제공합니다.
+    ```
+    int num = Integer.parseInt("123");  // 문자열을 int로 변환
+    String str = Integer.toString(num);  // int를 문자열로 변환
+    ```
+- 비교 메서드:
+  - compareTo(): 두 객체의 크기(순서)를 비교하는 데 사용됩니다. 주로 정렬이 필요할 때 사용되며, 객체의 대소 관계를 판단합니다.
+    ```
+    Integer a = 5;
+    Integer b = 10;
+    int result = a.compareTo(b);  // result는 -1 (a가 b보다 작음)
+    ```
+
+  - equals(): 두 객체가 동일한지를 비교하는 데 사용됩니다. 객체의 내용이 같은지를 판단합니다.
+    ```
+    Integer a = 5;
+    Integer b = 5;
+    boolean isEqual = a.equals(b);  // isEqual은 true (값이 동일함)
+    ```
+✏️ **예제 11-7 CompareToExample**  
+```java
+public class Ex11_7 {
+    public static void main(String[] args) {
+        Integer a = 5;
+        Integer b = 10;
+
+        // compareTo 메서드를 사용하여 비교
+        int result = a.compareTo(b);  // result는 -1 (a가 b보다 작음)
+
+        System.out.println("Result of compareTo: " + result); //결과값:Result of compareTo: -1
+
+    }
+}
+```
+---
+
+
+
+
+
+---
 # Chapter 12 지네릭스, 열거형, 애너테이션 
 # Chapter 13 쓰레드
 
