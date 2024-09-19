@@ -524,10 +524,35 @@ after 정렬 [Dog, cat, lion, tiger]
 
 
 🔍 **예제 11-7(1)과 예제 11-7(2)에서 쓰인 compareTo()**  
+compareTo()가 두 예제에서 각각 다른 클래스의 메서드로 사용되었습니다.  
 
+- Integer 클래스의 compareTo()
+  - 용도: Integer 클래스의 compareTo() 메서드는 두 Integer 객체를 비교하는 데 사용됩니다.
+  - 메서드 호출: Integer 클래스의 인스턴스인 a에서 호출되므로 a와 b의 크기를 비교합니다.
+  ```
+    Integer a = 5;
+    Integer b = 10;
+  // compareTo 메서드를 사용하여 비교
+  int result = a.compareTo(b);  // result는 -1 (a가 b보다 작음)
+  ```
+- Comparator 인터페이스의 compareTo()
+  - 용도: compare() 메서드는 Comparator 인터페이스를 구현한 Descending 클래스에서 정의된 메서드입니다. 이 메서드는 두 객체를 비교하여 정렬 순서를 결정합니다.
+  - 메서드 호출: 
+```
+class Descending implements Comparator{
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        if(o1 instanceof Comparable && o2 instanceof Comparable){
+            Comparable c1=(Comparable) o1;
+            Comparable c2=(Comparable) o2;
+            return  c1.compareTo(c2)*-1;
+        }
+        return -1;
+    }
+}
+```
 https://chatgpt.com/share/66ebe739-6050-8002-9a89-e3327b62d10a
-
----
 
 
 ---
