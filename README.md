@@ -358,7 +358,7 @@ public class Ex11_5 {
 
 ```
 ---
-**Arrays의 메서드 - 비교와 출력**  
+**Arrays 클래스**  
 
 Arrays 클래스는 배열과 관련된 다양한 기능을 제공하므로, 배열을 다룰 때 굉장히 편리하게 사용할 수 있습니다.  
 - Arrays: 배열을 처리하는 데 유용한 정렬, 검색, 변환 등의 메서드를 제공하는 `유틸리티 클래스`.
@@ -366,11 +366,29 @@ Arrays 클래스는 배열과 관련된 다양한 기능을 제공하므로, 배
 - ArrayList: 크기가 가변적인 동적 배열 리스트.
 
 `toString()`으로 배열의 모든 요소를 문자열로 편하게 출력할 수 있다. toString()은 일차원 배열에만 사용할 수 있으므로, 다차원 배열에는 deepToString()을 사용해야 한다. 
-`deepToString()`은 배열의 모든 요소를 재귀적으로 접근해서 문자열을 구성하므로 2차원뿐만 아니라 3찬원 이상의 배열에도 동작한다.
+`deepToString()`은 배열의 모든 요소를 재귀적으로 접근해서 문자열을 구성하므로 2차원뿐만 아니라 3차원 이상의 배열에도 동작한다.
+`equals()`는 두 배열에 저장된 모든 요소를 비교해서 같으면 true, 다르면 false를 반환한다. equalis()도 일차원 배열에만 사용 가능하므로, 아래 예제에서 결과값(4)와 같이 다차원 배열은 저장된 내용이 같은데오 false를 결과로 얻는다. 이때는 deepEquals()를 사용해야 한다.
 
+✏️ **예제 11-6 Arrays의 메서드 - 비교와 출력**  
 ```java
 
+public class Ex11_6 {
+    public static void main(String[] args) {
 
+        int[] arr={0,1,2,3,4};
+        int[][] arr2D={{11,12},{21,22}};
+
+        System.out.println(Arrays.toString(arr));//결과값(1): [0, 1, 2, 3, 4]
+        System.out.println(Arrays.deepToString(arr2D));// 결과값(2): [[11, 12], [21, 22]]
+
+        int[] arr2={0,1,2,3,4};
+        int[][] arr2D2={{11,12},{21,22}};
+
+        System.out.println(Arrays.equals(arr,arr2));//결과값(3):true
+        System.out.println(Arrays.equals(arr2D,arr2D2));//결과값(4):false
+        System.out.println(Arrays.deepEquals(arr2D,arr2D2));//결과값(5):true
+    }
+}
 ```
 
 🔍 **유틸리티 클래스란,**  
@@ -400,10 +418,17 @@ public class MathUtils {
         return a + b;
     }
 }
-
 ```
+##### 상속도  
 
-
+Arrays 클래스는 자바에서 직접 상속되지 않는 final 클래스입니다.  
+즉, Arrays 클래스는 인스턴스를 만들 수 없으며, 제공되는 메서드는 모두 static으로 사용됩니다.
+```
+java.lang.Object
+    └── java.util.Arrays (final)
+```
+- java.lang.Object: 모든 자바 클래스의 최상위 클래스입니다. Arrays 클래스는 이 클래스를 상속받습니다.
+- java.util.Arrays: 배열을 다루기 위한 여러 정적 메서드를 제공하는 유틸리티 클래스입니다. 이 클래스는 final로 선언되어 다른 클래스가 이 클래스를 상속할 수 없습니다.
 
 ---
 # Chapter 12 지네릭스, 열거형, 애너테이션 
