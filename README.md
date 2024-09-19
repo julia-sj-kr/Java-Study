@@ -521,10 +521,13 @@ after 정렬 [Dog, cat, lion, tiger]
 대소문자 구분x [cat, Dog, lion, tiger]
 역순 정렬 [tiger, lion, cat, Dog]
 ```
+
+
+🔍 **예제 11-7(1)과 예제 11-7(2)에서 쓰인 compareTo()**  
+
+https://chatgpt.com/share/66ebe739-6050-8002-9a89-e3327b62d10a
+
 ---
-
-
-
 
 
 ---
