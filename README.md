@@ -90,8 +90,100 @@ class Node{
 
 + 타입과 생성자가 다른 이유: **다형성**  
   Queue q = new LinkedList();는 자바의 다형성을 활용하여 `인터페이스(Queue)` 를 사용해 `구현체(LinkedList)`를 참조하였다.
-  인터페이스 타입을 사용하여 다양한 구현체를 다룰 수 있으므로, `코드의 재사용성` 및 `유지보수성`이 높아집니다.
   여기서는 Queue라는 인터페이스 타입을 사용하지만, 실제 객체는 LinkedList 클래스를 사용해 생성된 것입니다. 이 코드는 q 변수가 Queue 타입을 따르며, 큐로서의 동작만 허용되지만, 내부적으로는 LinkedList의 메서드가 실행   된다는 의미입니다.
+
++ **다형성의 필요성**
+  + 확장성(코드의 재사용성): 다형성을 사용하면 Animal 클래스를 확장한 다른 클래스들이 추가되더라도 코드를 수정할 필요가 없습니다.
+  + 유지보수성: 부모 클래스 타입으로 코드를 작성하면, 각 자식 클래스가 어떤 객체인지를 구분하지 않고도 일관된 방식으로 메서드를 호출할 수 있습니다.
+  + 다형성이 없다면:
+    ```
+    class Dog {
+        public void sound() {
+            System.out.println("멍멍!");
+       }
+    }
+
+    class Cat {
+        public void sound() {
+            System.out.println("야옹!");
+        }
+    }
+
+    class Cow {
+        public void sound() {
+            System.out.println("음메!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Dog myDog = new Dog();
+            Cat myCat = new Cat();
+            Cow myCow = new Cow();
+
+            // 동물마다 개별적으로 메서드를 호출해야 하고
+            // 동물이 추가될 때마다 if-else 또는 switch로 동작을 관리해야 함
+            String animalType = "dog"; // 예시로 동물의 종류를 문자열로 구분
+
+            if(animalType.equals("dog")) {
+                myDog.sound();
+            } else if(animalType.equals("cat")) {
+                myCat.sound();
+            } else if(animalType.equals("cow")) {
+                myCow.sound();
+            }
+            // 동물이 추가되면 또 다른 조건을 추가해야 함
+        }
+    }
+    ```
+   + 동일한 기능을 다형성을 활용하면:
+
+   ```
+    // 부모 클래스 Animal
+    class Animal {
+        public void sound() {
+            System.out.println("동물이 소리를 냅니다.");
+        }
+    }
+
+    class Dog extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("멍멍!");
+        }
+    }
+
+    class Cat extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("야옹!");
+        }
+    }
+
+    class Cow extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("음메!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            // Animal 배열로 다양한 동물 관리
+            Animal[] animals = {new Dog(), new Cat(), new Cow()};
+
+            // 반복문으로 일괄 처리 가능
+            for (Animal animal : animals) {
+                animal.sound(); // 각 동물에 맞는 sound() 메서드가 호출됨
+            }
+        }
+    }
+
+     ```
+
+    
+
+
 
 
 
