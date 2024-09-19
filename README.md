@@ -357,10 +357,51 @@ public class Ex11_5 {
 }
 
 ```
-    
+---
+**Arrays의 메서드 - 비교와 출력**  
+
+Arrays 클래스는 배열과 관련된 다양한 기능을 제공하므로, 배열을 다룰 때 굉장히 편리하게 사용할 수 있습니다.  
+- Arrays: 배열을 처리하는 데 유용한 정렬, 검색, 변환 등의 메서드를 제공하는 `유틸리티 클래스`.
+- Array: 기본 배열로 크기가 고정된 자료구조.
+- ArrayList: 크기가 가변적인 동적 배열 리스트.
+
+`toString()`으로 배열의 모든 요소를 문자열로 편하게 출력할 수 있다. toString()은 일차원 배열에만 사용할 수 있으므로, 다차원 배열에는 deepToString()을 사용해야 한다. 
+`deepToString()`은 배열의 모든 요소를 재귀적으로 접근해서 문자열을 구성하므로 2차원뿐만 아니라 3찬원 이상의 배열에도 동작한다.
+
+```java
 
 
+```
 
+🔍 **유틸리티 클래스란,**  
+유틸리티 클래스(Utility Class)는 일반적으로 특정 작업을 수행하기 위해 만들어진 클래스입니다. 이러한 클래스는 인스턴스를 생성할 필요 없이 static 메서드를 통해 직접 사용할 수 있는 메서드들을 제공합니다.  
+
+##### 예시  
+- java.util.Arrays: 배열을 처리하는 다양한 메서드를 제공합니다.
+- java.util.Collections: 컬렉션(리스트, 세트 등)을 다루기 위한 메서드를 제공합니다.
+- java.lang.Math: 수학적 계산을 위한 다양한 메서드를 제공합니다(예: Math.sqrt(), Math.random() 등).
+
+##### 특징  
+  - 정적 메서드: 유틸리티 클래스의 메서드는 대부분 static으로 정의되어 있어 인스턴스를 생성하지 않고도 호출할 수 있습니다.
+```java
+public class MathUtils {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+``` 
+  - 인스턴스화 방지: 유틸리티 클래스는 보통 생성자를 private로 정의하여 인스턴스 생성을 방지합니다. 이렇게 하면 클래스의 기능을 객체가 아닌 클래스 이름을 통해 직접 사용할 수 있습니다.
+```java
+public class MathUtils {
+    private MathUtils() {
+        // 생성자 호출 방지
+    }
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+```
 
 
 
