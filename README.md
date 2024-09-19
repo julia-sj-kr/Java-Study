@@ -196,8 +196,22 @@ class Node{
 📃 **Queue 인터페이스**
 
 
-🔍 
-
+🔍 **관계 분석**
+List, Set, Map, Stack, Queue는 자바 컬렉션 프레임워크의 다양한 인터페이스 및 클래스들입니다. 이들 각각의 상속 계층도를 보면 자바에서 어떻게 데이터 구조를 관리하는지 이해할 수 있습니다.
+- `Collection`: List, Set, Queue가 상속받는 상위 인터페이스입니다.
+- `List`, `Set`, `Queue`는 각각의 특징에 맞게 구체적인 클래스로 구현됩니다.
+- `Map`은 Collection과 독립적으로 키-값 쌍을 관리하는 인터페이스입니다.
+- `Stack`은 List의 구현체 중 하나입니다.
+- List 상속 계층도
+   ```plaintext
+   java.lang.Object
+      ↳ java.util.Collection (인터페이스)
+         ↳ java.util.List (인터페이스)
+            ↳ java.util.ArrayList
+            ↳ java.util.LinkedList
+            ↳ java.util.Vector
+               ↳ java.util.Stack
+   ```
 
 ---
 **Iterator, ListIterator**
