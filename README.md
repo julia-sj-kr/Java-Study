@@ -180,7 +180,10 @@ class Node{
     }
 
      ```
-
+---
+**Iterator, ListIterator**
+컬렉션 프레임웍에서는 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화하였다.  
+컬렉션에 저장된 각 요소에 접근하는 기능을 가진 Iterator 인터페이스를 정의하고, Collection 인터페이스에는 'Iterator를 구현한 클래스의 인스턴스'를 반환하는 iterator()를 정의하고 있다.
     
 
 
