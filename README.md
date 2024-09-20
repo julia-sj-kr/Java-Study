@@ -358,7 +358,7 @@ public class Ex11_5 {
 
 ```
 ---
-**Arrays 클래스**  
+📃 **Arrays 클래스**  
 
 Arrays 클래스는 배열과 관련된 다양한 기능을 제공하므로, 배열을 다룰 때 굉장히 편리하게 사용할 수 있습니다.  
 - Arrays: 배열을 처리하는 데 유용한 정렬, 검색, 변환 등의 메서드를 제공하는 `유틸리티 클래스`.
@@ -431,7 +431,7 @@ java.lang.Object
 - java.util.Arrays: 배열을 다루기 위한 여러 정적 메서드를 제공하는 유틸리티 클래스입니다. 이 클래스는 final로 선언되어 다른 클래스가 이 클래스를 상속할 수 없습니다.
 
 ---
-**Integer 클래스**  
+📃 **Integer 클래스**  
 자바에서 기본 데이터 타입인 int를 객체로 다룰 수 있도록 해주는 Wrapper 클래스입니다.  
 자바는 객체 지향 언어이기 때문에 원시 타입(primitive type)인 int와 같은 기본 데이터 타입을 객체로 사용할 필요가 있을 때 Integer 클래스를 사용합니다.  
 ##### 특징  
@@ -461,6 +461,21 @@ java.lang.Object
     Integer b = 5;
     boolean isEqual = a.equals(b);  // isEqual은 true (값이 동일함)
     ```
+---
+📃 **Comparator 인터페이스, Comparable 인터페이스**  
+
+```java
+public interface Comparator{
+   int compare(Object o1, Object 02); //o1과 o2를 비교
+}
+```
+
+
+
+
+
+---
+
 ✏️ **예제 11-7(1) CompareToExample**  
 ```java
 public class CompareToExample {
